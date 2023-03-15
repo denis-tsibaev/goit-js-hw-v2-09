@@ -33,6 +33,7 @@ function bodyColorizeByInterval() {
   intervalId = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, DELAY);
+
   refs.startBtn.disabled = true;
   refs.stopBtn.disabled = false;
 }
