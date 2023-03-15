@@ -18,25 +18,28 @@
 //   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 // }
 
+const DELAY = 1000;
+
 const refs = {
   startBtn: document.querySelector('[data-start]'),
   stopBtn: document.querySelector('[data-stop]'),
 };
 
-refs.startBtn.addEventListener('click', bodyColorizeByInterval);
+let intervalId = null;
 
+//on start click
 function bodyColorizeByInterval() {
-  timerId = setInterval(() => {
+  document.body.style.backgroundColor = getRandomHexColor();
+  intervalId = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
-  }, 1000);
+  }, DELAY);
   refs.startBtn.disabled = true;
   refs.stopBtn.disabled = false;
 }
 
-refs.stopBtn.addEventListener('click', intervalReset);
-
+//on stop click
 function intervalReset() {
-  clearInterval(timerId);
+  clearInterval(intervalId);
   //   document.body.style.backgroundColor = 'white';
   refs.startBtn.disabled = false;
   refs.stopBtn.disabled = true;
@@ -45,3 +48,6 @@ function intervalReset() {
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
+
+refs.startBtn.addEventListener('click', bodyColorizeByInterval);
+refs.stopBtn.addEventListener('click', intervalReset);
