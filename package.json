@@ -9,13 +9,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/denis-tsibaev/goit-js-hw-v2-09.git"
+		"url": "git+https://github.com/goitacademy/parcel-project-template.git"
 	},
 	"keywords": [],
 	"author": "Denis Tsibaev",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/goitacademy/goit-js-hw-v2-09/issues"
+		"url": "https://github.com/goitacademy/parcel-project-template/issues"
 	},
 	"dependencies": {
 		"flatpickr": "^4.6.13",
